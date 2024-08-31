@@ -1,0 +1,59 @@
+Prezentare generala:
+Tema a fost realizata in 3 zile.
+Ideile de implementare mi-au venit succesiv.
+In primele zile am implementat rezolvarile problemelor fortificatii si curse.
+In zilele ramase, beamdrone si curatare (aici am stat foarte mult timp, voi detalia mai jos).
+--Curatare--
+Evident, se observa ca problema suporta aplicarea algoritmului BFS/Backtracking
+Din pacate, nu am avut suficient timp sa implementez partea de Backtracking, as fi vrut sa realizez
+urmatoarele:
+- BKT-ul separat de BFS
+- BFS pentru toti robotii ca sursa
+- BFS pentru toate zonele murdare ca sursa
+- BFS pentru fiecare robot si fiecare pata ( 8 BFS-uri )
+- BKT pentru a genera toate posibilitatile in care se iau pete
+- BKT pentru a determina numarul de celule pentru fiecare robot
+Avand in vedere ca s-a implementat doar BFS-ul, complexitatea este O(N+M).
+Probleme la Curatare
+-> Nu au fost probleme care sa necesite depanari dificile, BFS-ul este cunoscut.
+--Statistics--
+Se observa cu usurinta ca aceasta problema se poate rezolva cu algoritmul lui Dijkstra.
+Folosesc un vector boolean pentru a stoca celule barbare.
+Se foloseste algoritmul lui Dijkstra putin modificat intrucat 
+Se formeaza un vector de costuri de la fiecare atacant (barbar) pana la sursa (care este 1), de asemenea,
+se adauga distanta pana la nodul care 
+Se foloseste o sortare pentru a determina costul/distanta minim/minima.
+In cazul in care minimul nu este primul element din vectorul de costuri, se incearca verificarea celorlalte elemente de dupa.
+Exista o sansa sa se adauge toate fortificatiile in cazul in care primul element de dupa minim este mare.
+Probleme la Fortificatii:
+-> Au existat probleme cu limita de timp, initial am scris o functie care implementeaza algoritmul lui Dijkstra foarte complicaa si ineficient.
+-> Evident, am lecturat diverse documente (algoritmi pe grafuri) si rezolvari ale unor probleme similare (codeforces, infoarena).
+-> Depanarea a fost acceptabila intrucat solutia a fost scrisa in C++, nu in Java.
+Complexitatea este O(M*logN + N + K*B).
+--Beamdrome--
+Se observa ca problema poate fi rezolvata folosind BFS + cazuri pentru a calcula corect timpul minim.
+Trebuie mentionat faptul ca la aceasta problema am stat cel mai mult timp din cauza erorilor TLE si WA (ultimele teste).
+Se formeaza o structura Cell pentu a modela o celula, exista un camp 'directia_curenta' pentru a simplifica lucrurile.
+Evident, se adauga toti vecinii de pe o anumita directie intrucat acestia au acelasi cost (nu se efectueaza vreo rotatie).
+S-a folosit o functie get_cost pentru a scrie mai putin, aceasta calculeaza costul corect la un anumit moment de timp.
+BFS-ul a fost implementat folosind un Priority Queue (Cell trebuie sa implementeze Comparable pentru asta).
+Executia inceteaza atunci cand se ajunge la final (punctul (xf,yf)).
+Complexitatea este O(Max(M,N)*(M+N)) (caz defavorabil, acea paranteza O(M+N) reprezinta complexitatea BFS-ului).
+Probleme la Prinel:
+-> Probleme cu limita de timp, initial nu am folosit elemente optime.
+-> A fost nevoie de multa documentatie (geeks, stack), de asemenea am intrebat 2 colege si un coleg pentru a obtine putina inspiratie (am idei ineficiente la inceput, mi-au recomandat algoritmul lui Lee).
+-> Depanarea nu a mai fost banala, a trebuit sa rescriu sursa in C++ pentru a compara rezultatele.
+--Curse--
+Se observa ca problema se rezolva cu o sortare topologica ce se aplica unui graf construit pe baza matricei de la intrare.
+Prelucrarea incepe la citirea datelor de la intrare, daca exista 2 elemente diferite de pe aceeasi coloana, se adauga muchia ce se formeaza in graf. Am folosit si un vector verify pentru a simplifica algoritmul propus.
+La sfarsit se foloseste sortarea topologica pe graful obtinut
+Complexitatea algoritmului este complexitatea sortarii topologice (O(M+N)).
+Referinte:
+-> Geeks
+-> StackOverflow
+-> Codeforces
+-> Infoarena
+-> OCW
+De asemenea, am obtinut mici idei de la o prietena pentru a imi imbunatati solutiile.
+O tema interesanta.
+Catalin-Alexandru Ripanu
