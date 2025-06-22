@@ -1,6 +1,4 @@
-# HW2_PA
-
-An Algorithmic homework ilustrating Graph Algos like BFS / DFS, Dijkstra's, Topological Sort, etc.
+## An Algorithmic Assignment illustrating Graph Algos like BFS / DFS, Dijkstra's, Topological Sort, etc.
 
 ## Curatare
 Obviously, it's noticeable that the problem supports applying the BFS/Backtracking algorithm.
